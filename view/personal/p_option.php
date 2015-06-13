@@ -1,0 +1,10 @@
+<script>
+$(document).ready(function(){
+  $("#button1").click(function(){
+    $("#options").load("./dynamic/mysinger.php");
+  });
+   $("#button2").click(function(){
+    $("#options").load("./dynamic/mysongs.php");
+  });
+});
+</script>

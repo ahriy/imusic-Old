@@ -9,7 +9,7 @@ def strip(str):
 	for i in range (0,l):
 		if ord(str[i])==10:
 			return str[0:i]
-cn_male=open('cn_male.txt')
+cn_male=open('ws_male.txt')
 lines=cn_male.readlines()
 # the next loop get every url for a single singer and get the corresponding html
 count=0
@@ -40,7 +40,7 @@ for line in lines:
 		count=count+1
 		if count>100:
 			break
-		filename="cn_male_%d.txt" %count
+		filename="ws_male_%d.txt" %count
 		wfile=open(filename,"w")
 		wfile.write(name+"\n")
 		wfile.write(region+"\n")

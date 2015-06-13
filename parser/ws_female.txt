@@ -1,10 +1,6 @@
 /artist/5031
-/artist/5031
-/artist/6792
 /artist/6792
 /artist/2387380
-/artist/2387380
-/artist/11703
 /artist/11703
 /artist/469908
 /artist/11713

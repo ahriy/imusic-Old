@@ -24,15 +24,24 @@
 			    </div>
 			  </div>
 			  <div class="form-group">
-			    <div class="col-sm-offset-2 col-sm-10">
-			      <button type="submit" class="btn btn-default">登陆</button>
-			    </div>
+			  		<div class="row clearfix">
+						<div class="col-md-4 column">
+						    <div class="col-sm-offset-2 col-sm-10">
+						    	<a href="/imusic/view/register.php">注册</a>
+			    			</div>
+						</div>
+						<div class="col-md-4 column">
+						</div>
+						<div class="col-md-4 column">
+						    <div class="col-sm-offset-2 col-sm-10">
+			     			<button type="submit" class="btn btn-default">登陆</button>
+			    			</div>
+						</div>
+					</div>
+
 			  </div>
 			</form>
       </div>
-<!--       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">登陆</button>
-      </div> -->
     </div>
   </div>
 </div>

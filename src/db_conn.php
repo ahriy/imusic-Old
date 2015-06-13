@@ -1,6 +1,6 @@
 <?php 
 
-
+echo "enter the db";
 $con = mysql_connect("localhost","root","");
 if (!$con)
   {
@@ -10,14 +10,20 @@ if (!$con)
 
 mysql_query("use imusic");
 
-mysql_query("INSERT INTO users (name, passwd, gender) 
-VALUES ('Ahriy', 'asdf911', 'male')");
+// insert singers and songs into database 
 
+$res=mysql_query("show variables like 'character_set_%'");
+echo $res
 
-$res=mysql_query("select * from users");
+// $f=fopen("../parser/cn_male/cn_male_1","r");
+// while(!feof($f)){
+// 	$line=fgets($f);
+// 	if($line=="albums") echo "jjjsdfsdf";
+// 	echo $line;
+// 	$line="ahriy";
+// 	mysql_query("INSERT INTO singers (id,name) 
+// 	VALUES (1,".$line.")");
+// }
+// fclose($f);
 
-while($row=mysql_fetch_array($res)){
-	echo $row['name'];
-	echo "<br />";
-}
 ?>

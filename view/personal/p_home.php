@@ -4,15 +4,10 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <a id="button1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="option1">
           收藏的歌手
         </a>
       </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
     </div>
   </div>
   <div class="panel panel-default">
@@ -25,7 +20,7 @@
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="panel-body">
-         haven't heard of them accusamus labore sustainable VHS.
+         <button id="button2">获取外部内容</button>
       </div>
     </div>
   </div>
@@ -47,7 +42,7 @@
     <div class="panel-heading" role="tab" id="headingfour">
       <h4 class="panel-title">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-          创建的歌单
+          收藏的歌单
         </a>
       </h4>
     </div>
@@ -60,8 +55,7 @@
 </div>
   </div>
 
-
-		<div class="col-md-8 column">
+		<div class="col-md-8 column" id="options">
 			
 		</div>
 

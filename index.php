@@ -5,5 +5,5 @@ require "view/recommendation.php";
 require "view/guess_like.php";
 require "view/ranking_list.php";
 require "view/tail.php";
-//require "src/db_conn.php";
+require "src/db/db_conn.php";
  ?>
