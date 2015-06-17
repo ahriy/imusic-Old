@@ -64,7 +64,14 @@
 					<div class="col-sm-8">
 						<input  class="form-control" id="mail" name="mail"/>
 					</div>
-				</div>	
+				</div>
+
+				<div class="form-group">
+					 <label for="what_up" class="col-sm-3 control-label">个性签名</label>
+					<div class="col-sm-8">
+						<input  class="form-control" id="what_up" name="what_up"/>
+					</div>
+				</div>		
 
 				<div class="form-group">
 					<div class="col-sm-offset-2 col-sm-10">

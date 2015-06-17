@@ -9,6 +9,15 @@
         </a>
       </h4>
     </div>
+  </div>  
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a id="create_list" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" id="create_list">
+          创建歌单
+        </a>
+      </h4>
+    </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingThree">

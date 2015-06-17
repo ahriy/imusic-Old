@@ -28,7 +28,7 @@
 		session_start();
 		$_SESSION['user']=$_POST['rname'];
 		$_SESSION['passwd']=$_POST['crpasswd'];
-		$inster_comm=sprintf("insert into user (name,passwd,gender,phone,mail) values ('%s','%s','%s','%s','%s')",$_POST['rname'],$_POST['crpasswd'],$_POST['gender'],$_POST['phone'],$_POST['mail']);
+		$inster_comm=sprintf("insert into user (name,passwd,gender,phone,mail,what_up) values ('%s','%s','%s','%s','%s','%s')",$_POST['rname'],$_POST['crpasswd'],$_POST['gender'],$_POST['phone'],$_POST['mail'],$_POST['what_up']);
 		mysql_query($inster_comm);
 		header("Location: /imusic/");
 		exit;
@@ -38,39 +38,4 @@
 		exit;
 	} 
  ?>
-<!-- 	<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-4 column">
-		</div>
-		<div class="col-md-4 column">
-			<form class="form-horizontal" role="form" method="POST" action="/imusic/">
-				<div class="form-group">
-					 <label for="rname" class="col-sm-3 control-label">用户名</label>
-					<div class="col-sm-8">
-						<input class="form-control" id="rname" name="rname"/>
-					</div>
-				</div>
-				<div class="form-group">
-					 <label for="rpasswd" class="col-sm-3 control-label">密码</label>
-					<div class="col-sm-8">
-						<input type="password" class="form-control" id="rpasswd" name="rpasswd"/>
-					</div>
-				</div>
-				<div class="form-group">
-					 <label for="crpasswd" class="col-sm-3 control-label">确认密码</label>
-					<div class="col-sm-8">
-						<input type="password" class="form-control" id="crpasswd" name="crpasswd"/>
-					</div>
-				</div>				
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						 <button type="submit" class="btn btn-default">提交</button>
-					</div>
-				</div>
-			</form>
-		</div>
-		<div class="col-md-4 column">
-		</div>
-	</div>
-	</div> -->
 </body>

@@ -7,15 +7,24 @@ $passwd="ss";
  					} 
 					mysql_query("use mydb");
 					session_start(); 
-
-					$str=sprintf("select * from user,user_like_singer,singer
-					              where user.name='%s' and user.id=user_like_singer.user_id and singer.id=user_like_singer.singer_id",$_SESSION['user']);
-					echo $str;
-					//$str=sprintf("select * from user")
-					$res=mysql_query($str);
-					while($row=mysql_fetch_array($res)){
-						echo ($row['user.name']);
+					for ($i=0; $i <20 ; $i++) { 
+						$insert_comm=sprintf("insert into user (name,
+							passwd) values ('user%d','%s')",$i,"asdf911"
+						);
+						mysql_query($insert_comm);	
 					}
-					//$row=mysql_fetch_array($res);
-					print_r($row)
+					date_default_timezone_set("Asia/Shanghai");
+					$time=date('Y-m-d H:i:s');
+					echo $time;
+					$str=sprintf("UPDATE user_comment_song SET time= '".$time."' where song_id=2");
+					echo $str;
+					mysql_query($str);	
+					$str=sprintf("select * from user");
  ?>
+<P align=center> <TABLE borderColor=#bc8f8f cellSpacing=1 
+width=315 border=1> <TBODY> <TR> <TD><EMBED 
+style="FILTER: invert(); WIDTH: 315px; HEIGHT: 150px" src="../music/OneLove.mp3"
+type=audio/mpeg 
+autostart="true"></EMBED></TD></TR></TBODY></TABLE> 
+<P align=center></P></P>
+

@@ -77,7 +77,7 @@
 							 <a href="/imusic/view/personal/p_index.php">我的音乐</a>
 						</li>
 						<li>
-							 <a href="#">我的朋友</a>
+							 <a href="/imusic/view/friends/f_index.php">我的朋友</a>
 						</li>
 					</ul>
 
