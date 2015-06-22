@@ -66,24 +66,24 @@
 					  die('Could not connect: ' . mysql_error());
  					} 
 					mysql_query("use mydb");
-					//session_start();
 					$str=sprintf("select user2.name,user2.what_up from user user1, user user2, follow
 					              where user1.name='%s' and user1.id=follow.user_id and user2.id=follow.follower_id",$_SESSION['user']);
 					$res=mysql_query($str);
-					while($row=mysql_fetch_array($res)){
-						// if(!isset($row["what_up"])){
-						// 	$row["what_up"]="";
-						// }
+					$ran=0;
+					while($row=mysql_fetch_array($res)){	
+						if($ran>=5)$ran=0;
 						$str=sprintf("
 							<tr>
 								<td>
-									%s
+									<img src='../../img/users/user%d.jpg' width='30px'>%s
 								</td>
+
 								<td>
 									%s
 								</td>
-							</tr>",$row["name"],$row["what_up"]);
+							</tr>",$ran,$row["name"],$row["what_up"]);
 						echo $str;
+						$ran++;
 					}
 
 					 ?>
@@ -91,8 +91,6 @@
 			</table>
 		</div>
 	</div>
-
-
 
 
 <!-- code for the player  -->

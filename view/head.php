@@ -71,7 +71,7 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li>
-							 <a href="#">发现音乐</a>
+							 <a href="/imusic/view/music/m_index.php">发现音乐</a>
 						</li>
 						<li>
 							 <a href="/imusic/view/personal/p_index.php">我的音乐</a>
