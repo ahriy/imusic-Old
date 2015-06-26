@@ -6,6 +6,23 @@
    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
    <meta charset="utf-8">
+   <script>
+	$(document).ready(function(){
+	  $("#button1").click(function(){
+	    $("#options").load("/imusic/view/personal/dynamic/mysinger.php");
+	  });
+	   $(".slist").click(function(){
+	   	// alert($(this).attr("id"));
+	    $("#options").load("/imusic/view/personal/dynamic/song_list.php?list="+$(this).attr("id"));
+	  });
+	    $(".insert_record").click(function(){
+	    $("#insert_record").load("/imusic/view/personal/dynamic/insert_record.php?song_id="+$(this).attr("song_id")+"&user_name="+$(this).attr("user_name"));
+	  });
+	   	$("#my_record").click(function(){
+	    $("#options").load("/imusic/view/personal/dynamic/my_record.php");
+	  });
+	});
+	</script>
 </head>
 <body>
 	<div class="container">

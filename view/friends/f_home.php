@@ -3,6 +3,16 @@
 			<h3>
 				好友动态
 			</h3>
+			<script>
+function copyText(song_id,user_name)
+{
+// var song=song_id;
+// var user=user_name;
+// $("#insert_record").load("./dynamic/mysinger.php");
+}
+
+</script>
+<div id="insert_record"><button class="insert_record"></button></div>
 				<?php  
 					$con = mysql_connect("localhost","root","");
 					if (!$con){
@@ -25,7 +35,7 @@
 						$song_name=$s_row["name"];
 						$str=sprintf("
 							<h3>
-								%s's comment to <button type='button' class='btn btn-default' data-toggle='modal' data-target='#%s'>%s</button>
+								%s's comment to <button type='button' song_id='%s' user_name='%s' class='insert_record btn btn-default' data-toggle='modal' data-target='#%s'>%s</button>
 							</h3>
 							<p>
 								%s
@@ -33,7 +43,7 @@
 							<p><small>
 								%s
 							</small></p>
-							",$row["name"],$song_name,$s_row["name"],$row["content"],$row["time"]);
+							",$row["name"],$row["song_id"],$_SESSION['user'],$song_name,$s_row["name"],$row["content"],$row["time"]);
 						echo $str;
 						$player=sprintf('<div class="modal fade" id="%s" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 						  <div class="modal-dialog">

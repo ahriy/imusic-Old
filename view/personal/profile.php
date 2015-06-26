@@ -13,7 +13,6 @@ $row=mysql_fetch_array($res);
 ?>
 
 <div class="row clearfix">
-
 		<div class="col-md-4 column">
 			<table class="table">
 				<tbody>

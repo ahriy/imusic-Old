@@ -61,17 +61,38 @@
         </a>
       </h4>
     </div>
+
     <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfour">
-      <div class="panel-body">
-       obably haven't heard of them accusamus labore sustainable VHS.
+      <div class="panel-body" id="like_song_list">
+        <?php 
+          $con = mysql_connect("localhost","root","");
+            if (!$con){
+            die('Could not connect: ' . mysql_error());
+            } 
+          mysql_query("use mydb");
+          $str=sprintf("select song_list.name as lname, song_list.id as lid, user_like_song_list.user_id as uid
+                                from song_list,user_like_song_list,user
+                                where user_like_song_list.user_id=user.id and user.name='%s' and user_like_song_list.song_list_id=song_list.id",$_SESSION['user']);
+          $res=mysql_query($str);
+          echo "<ul class='list-group'>";
+          while($row=mysql_fetch_array($res)){
+            $song_list_id=$row['lid'];
+            $str=sprintf("<li class='list-group-item'>
+                          <button class='slist  btn btn-default' id=%s>%s</button>%s
+                          </li>
+              ",$song_list_id,$row["lname"],$row["uid"]);
+            echo $str;
+          }
+            echo "</ul>";
+         ?>
       </div>
     </div>
-  </div>
+      </div>
 
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
-        <a id="button1" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="option1">
+        <a id="my_record" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" id="option1">
           我的听歌记录
         </a>
       </h4>
