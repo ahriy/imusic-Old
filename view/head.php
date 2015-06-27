@@ -25,6 +25,7 @@
 	</script>
 </head>
 <body>
+	<div id="insert_record"></button></div>
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-2 column">

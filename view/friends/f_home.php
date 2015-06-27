@@ -4,15 +4,8 @@
 				好友动态
 			</h3>
 			<script>
-function copyText(song_id,user_name)
-{
-// var song=song_id;
-// var user=user_name;
-// $("#insert_record").load("./dynamic/mysinger.php");
-}
-
 </script>
-<div id="insert_record"><button class="insert_record"></button></div>
+<div id="insert_record"></button></div>
 				<?php  
 					$con = mysql_connect("localhost","root","");
 					if (!$con){
@@ -21,7 +14,7 @@ function copyText(song_id,user_name)
 					mysql_query("use mydb");
 					//session_start();
 					$str=sprintf("select user2.name name,comment.content content,comment.song_id song_id,comment.time time from user user1, user user2, follow, user_comment_song comment
-					              where user1.name='%s' and user1.id=follow.user_id and user2.id=follow.follower_id and comment.user_id=user2.id order by comment.time",$_SESSION['user']);
+					              where user1.name='%s' and user1.id=follow.user_id and user2.id=follow.follower_id and comment.user_id=user2.id order by comment.time desc",$_SESSION['user']);
 					$res=mysql_query($str);
 					$song_name="";
 					
