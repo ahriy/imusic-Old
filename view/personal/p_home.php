@@ -78,9 +78,9 @@
           while($row=mysql_fetch_array($res)){
             $song_list_id=$row['lid'];
             $str=sprintf("<li class='list-group-item'>
-                          <button class='slist  btn btn-default' id=%s>%s</button>%s
+                          <button class='slist  btn btn-default' id=%s>%s</button>
                           </li>
-              ",$song_list_id,$row["lname"],$row["uid"]);
+              ",$song_list_id,$row["lname"]);
             echo $str;
           }
             echo "</ul>";

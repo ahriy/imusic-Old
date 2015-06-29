@@ -15,15 +15,5 @@ mysql_query("use imusic");
 $res=mysql_query("show variables like 'character_set_%'");
 echo $res
 
-// $f=fopen("../parser/cn_male/cn_male_1","r");
-// while(!feof($f)){
-// 	$line=fgets($f);
-// 	if($line=="albums") echo "jjjsdfsdf";
-// 	echo $line;
-// 	$line="ahriy";
-// 	mysql_query("INSERT INTO singers (id,name) 
-// 	VALUES (1,".$line.")");
-// }
-// fclose($f);
 
 ?>

@@ -21,11 +21,14 @@
 	   	$("#my_record").click(function(){
 	    $("#options").load("/imusic/view/personal/dynamic/my_record.php");
 	  });
+	   $(".add_to_list").click(function(){
+	    $("#add_song").load("/imusic/view/personal/dynamic/add_to_list.php?song_list="+$(this).attr("id")+"&song_id="+$(this).attr("song_id"));
+	  });
 	});
 	</script>
 </head>
 <body>
-	<div id="insert_record"></button></div>
+	<div id="insert_record"></div>
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-2 column">
