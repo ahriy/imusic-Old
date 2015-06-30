@@ -22,10 +22,30 @@
 	    $("#options").load("/imusic/view/personal/dynamic/my_record.php");
 	  });
 	   $(".add_to_list").click(function(){
+	   	alert("成功加入歌单");
 	    $("#add_song").load("/imusic/view/personal/dynamic/add_to_list.php?song_list="+$(this).attr("id")+"&song_id="+$(this).attr("song_id"));
+	  });
+	   $(".show_list").click(function(){
+	    $("#show_list").load("/imusic/view/ffriends/show_list.php?user_name="+$(this).attr("user_name"));
+	  });
+	   $(".follow_user").click(function(){
+	   	alert("您将关注用户"+$(this).attr("user_name"));
+	    $("#follow_user").load("/imusic/view/ffriends/follow_user.php?user_name="+$(this).attr("user_name")+"&user_id="+$(this).attr("user_id"));
 	  });
 	});
 	</script>
+	<style type="text/css"> 
+	img,a img{    
+	border:0;    
+	margin:0;    
+	padding:0;    
+	max-width:600px;    
+	width:expression(this.width>600?"600px":this.width);    
+	max-height:600px;    
+	height:expression(this.height>600?"600px":this.height);    
+	}   
+	</style>
+	
 </head>
 <body>
 	<div id="insert_record"></div>
@@ -94,6 +114,11 @@
 						<li>
 							 <a href="/imusic/view/music/m_index.php">发现音乐</a>
 						</li>
+
+						<li>
+							 <a href="/imusic/view/ffriends/ff_index.php">发现朋友</a>
+						</li>
+
 						<li>
 							 <a href="/imusic/view/personal/p_index.php">我的音乐</a>
 						</li>

@@ -36,22 +36,23 @@
 				<table class="table">
 				<tbody>
 				<?php  
+
 					$con = mysql_connect("localhost","root","");
 					if (!$con){
 					  die('Could not connect: ' . mysql_error());
  					} 
 					mysql_query("use mydb");
 					//session_start();
-					$str=sprintf("select category.name name 
+					$str=sprintf("select category.name name, id
 						          from category");
 					$res=mysql_query($str);
 					while($row=mysql_fetch_array($res)){
 						$str=sprintf("
 							<tr>
 								<td>
-									%s
+									<a href='/imusic/view/music/category/c_index.php?c_id=%s'>%s</a>
 								</td>
-							</tr>",$row["name"]);
+							</tr>",$row["id"],$row["name"]);
 						echo $str;
 					}
 
@@ -84,21 +85,8 @@
 						$str=sprintf("
 						<button type='button' song_id='%s' user_name='%s' class='insert_record btn btn-default' data-toggle='modal' data-target='#%s'>%s</button>
 							",$row["song_id"],$_SESSION['user'],$song_name,$song_name);
-						
-						$player=sprintf('<div class="modal fade" id="%s" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						  <div class="modal-dialog">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						        <h4 class="modal-title" id="myModalLabel">正在为您播放 %s</h4>
-						      </div>
-						      <div class="modal-body">
-						<P align=center> <TABLE borderColor=#bc8f8f cellSpacing=1 width=315 border=1> <TBODY> <TR> <TD><EMBED style="FILTER: invert(); WIDTH: 500px; HEIGHT: 120px" src="../../music/%s.mp3"
-						type=audio/mpeg autostart="true"></EMBED></TD></TR></TBODY></TABLE> <P align=center></P></P>
-						      </div>
-						    </div>
-						  </div>
-						</div>',$song_name,$song_name,$song_name);
+
+						$player=sprintf($_SESSION['player'],$song_name,$song_name,$song_name);
 						echo "<tr>";
 						echo "<td>";
 						echo $str;
