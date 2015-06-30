@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2015-06-22 12:34:41
+-- Generation Time: 2015-06-30 12:51:57
 -- 服务器版本： 5.6.24
 -- PHP Version: 5.6.8
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `category` (
   `id` int(11) NOT NULL,
   `name` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `category`
@@ -41,8 +41,7 @@ INSERT INTO `category` (`id`, `name`) VALUES
 (3, '爵士'),
 (4, '摇滚'),
 (5, '流行'),
-(6, '古典'),
-(7, '古风');
+(6, '古典');
 
 -- --------------------------------------------------------
 
@@ -60,12 +59,63 @@ CREATE TABLE IF NOT EXISTS `follow` (
 --
 
 INSERT INTO `follow` (`user_id`, `follower_id`) VALUES
+(1, 1),
 (1, 26),
 (1, 28),
 (1, 30),
 (1, 32),
 (1, 35),
+(1, 44),
 (1, 46);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `record`
+--
+
+CREATE TABLE IF NOT EXISTS `record` (
+  `id` int(11) NOT NULL,
+  `user_name` varchar(30) NOT NULL,
+  `song_id` int(11) NOT NULL,
+  `time` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `record`
+--
+
+INSERT INTO `record` (`id`, `user_name`, `song_id`, `time`) VALUES
+(3, 'ahriy', 1, '2015-06-26 23:24:49'),
+(5, 'ahriy', 1, '2015-06-27 13:19:59'),
+(6, 'ahriy', 2, '2015-06-27 13:20:22'),
+(7, 'ahriy', 2, '2015-06-27 13:26:44'),
+(8, 'ahriy', 1, '2015-06-27 13:30:25'),
+(9, 'ahriy', 1, '2015-06-27 14:08:17'),
+(10, 'ahriy', 3, '2015-06-27 14:14:14'),
+(11, 'ahriy', 2, '2015-06-27 16:23:34'),
+(12, 'ahriy', 3, '2015-06-29 21:48:44'),
+(13, 'ahriy', 3, '2015-06-29 21:50:22'),
+(14, 'ahriy', 3, '2015-06-29 22:22:50'),
+(15, 'ahriy', 3, '2015-06-29 22:45:14'),
+(16, 'ahriy', 3, '2015-06-29 22:54:27'),
+(17, 'ahriy', 2, '2015-06-29 22:54:32'),
+(18, 'ahriy', 3, '2015-06-29 23:24:05'),
+(19, 'ahriy', 2, '2015-06-30 10:11:10'),
+(20, 'ahriy', 3, '2015-06-30 11:21:19'),
+(21, 'ahriy', 1, '2015-06-30 16:02:10'),
+(22, 'ahriy', 3, '2015-06-30 16:03:58'),
+(23, 'ahriy', 3, '2015-06-30 16:13:48'),
+(24, 'ahriy', 2, '2015-06-30 16:13:51'),
+(25, 'ahriy', 3, '2015-06-30 16:13:55'),
+(26, 'ahriy', 3, '2015-06-30 16:15:01'),
+(27, 'ahriy', 3, '2015-06-30 16:18:05'),
+(28, 'ahriy', 3, '2015-06-30 16:24:43'),
+(29, 'ahriy', 3, '2015-06-30 16:26:34'),
+(30, 'ahriy', 3, '2015-06-30 16:32:38'),
+(31, 'ahriy', 2, '2015-06-30 16:35:46'),
+(32, 'ahriy', 2, '2015-06-30 16:36:41'),
+(33, 'ahriy', 2, '2015-06-30 16:38:03');
 
 -- --------------------------------------------------------
 
@@ -102,17 +152,18 @@ CREATE TABLE IF NOT EXISTS `song` (
   `name` varchar(45) DEFAULT NULL,
   `album` varchar(45) DEFAULT NULL,
   `year` varchar(45) DEFAULT NULL,
-  `singer_id` int(11) DEFAULT NULL
+  `singer_id` int(11) DEFAULT NULL,
+  `category` int(11) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `song`
 --
 
-INSERT INTO `song` (`id`, `name`, `album`, `year`, `singer_id`) VALUES
-(1, 'OnlyLove', NULL, NULL, NULL),
-(2, 'Yellow', NULL, NULL, 6),
-(3, '22', NULL, NULL, 5);
+INSERT INTO `song` (`id`, `name`, `album`, `year`, `singer_id`, `category`) VALUES
+(1, 'OnlyLove', NULL, NULL, NULL, 2),
+(2, 'Yellow', NULL, NULL, 6, 1),
+(3, '22', NULL, NULL, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -124,6 +175,13 @@ CREATE TABLE IF NOT EXISTS `song_has_category` (
   `song_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `song_has_category`
+--
+
+INSERT INTO `song_has_category` (`song_id`, `category_id`) VALUES
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -137,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `song_list` (
   `user_id` int(11) DEFAULT NULL,
   `note` text,
   `user_name` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `song_list`
@@ -147,7 +205,8 @@ INSERT INTO `song_list` (`id`, `name`, `user_id`, `note`, `user_name`) VALUES
 (12, 'Taylor Swift', NULL, '', 'ahriy'),
 (17, 'I love music', NULL, '', 'ahriy'),
 (18, '周杰伦', NULL, '这是一个关于周杰伦的歌单', 'ahriy'),
-(19, 'coldplay', NULL, '', 'ahriy');
+(19, 'coldplay', NULL, '', 'ahriy'),
+(20, '安安静静听歌', NULL, '', 'ahriy');
 
 -- --------------------------------------------------------
 
@@ -165,7 +224,10 @@ CREATE TABLE IF NOT EXISTS `song_list_has_song` (
 --
 
 INSERT INTO `song_list_has_song` (`song_list_id`, `song_id`) VALUES
-(19, 1);
+(17, 2),
+(18, 2),
+(19, 2),
+(20, 3);
 
 -- --------------------------------------------------------
 
@@ -182,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `photo` varchar(45) DEFAULT NULL,
   `gender` varchar(45) DEFAULT NULL,
   `what_up` text
-) ENGINE=InnoDB AUTO_INCREMENT=328 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `user`
@@ -210,8 +272,7 @@ INSERT INTO `user` (`id`, `name`, `passwd`, `phone`, `mail`, `photo`, `gender`, 
 (43, 'user17', 'asdf911', NULL, NULL, NULL, NULL, ''),
 (44, 'user18', 'asdf911', NULL, NULL, NULL, NULL, ''),
 (45, 'user19', 'asdf911', NULL, NULL, NULL, NULL, ''),
-(46, 'devil', '4876', '', '', NULL, '', 'I love music!'),
-(327, '', '', '', '', NULL, '', '');
+(46, 'devil', '4876', '', '', NULL, '', 'I love music!');
 
 -- --------------------------------------------------------
 
@@ -276,6 +337,15 @@ CREATE TABLE IF NOT EXISTS `user_like_song_list` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- 转存表中的数据 `user_like_song_list`
+--
+
+INSERT INTO `user_like_song_list` (`user_id`, `song_list_id`) VALUES
+(1, 12),
+(1, 17),
+(1, 20);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -290,6 +360,12 @@ ALTER TABLE `category`
 --
 ALTER TABLE `follow`
   ADD PRIMARY KEY (`user_id`,`follower_id`), ADD KEY `fk_users_has_users_users1_idx` (`follower_id`), ADD KEY `fk_users_has_users_users_idx` (`user_id`);
+
+--
+-- Indexes for table `record`
+--
+ALTER TABLE `record`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `singer`
@@ -359,7 +435,12 @@ ALTER TABLE `user_like_song_list`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `record`
+--
+ALTER TABLE `record`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT for table `singer`
 --
@@ -374,12 +455,12 @@ ALTER TABLE `song`
 -- AUTO_INCREMENT for table `song_list`
 --
 ALTER TABLE `song_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=328;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=47;
 --
 -- 限制导出的表
 --
