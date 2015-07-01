@@ -16,7 +16,6 @@
 	</br>
 	</br>
 		<?php 	
-				session_start();
 				$con = mysql_connect("localhost","root","");
 				if (!$con){
 				  die('Could not connect: ' . mysql_error());
@@ -56,10 +55,7 @@
 				echo "</td>";
 
 				//仅仅是为了对齐格式
-				echo "<td>";
-				echo "</td>";
-				echo "<td>";
-				echo "</td>";
+
 
 				echo "<td>";
 				echo "</td>";
@@ -77,14 +73,14 @@
 		      $query=sprintf("select song_list.name lname, song_list.id lid 
 		                            from song_list
 		                            where song_list.user_name='%s'",$_SESSION['user']);
-		      $res=mysql_query($query);
+		      $rres=mysql_query($query);
 		      $song_list_code.= "<ul class='list-group'>";
-		      while($row=mysql_fetch_array($res)){
-		        $song_list_id=$row['lid'];
+		      while($rrow=mysql_fetch_array($rres)){
+		        $song_list_id=$rrow['lid'];
 		        $str=sprintf("<li class='list-group-item'>
 		                      <button class='add_to_list  btn btn-default' song_id=%s id=%s>%s</button>
 		                      </li>
-		          ",$song_id,$song_list_id,$row["lname"]);
+		          ",$song_id,$song_list_id,$rrow["lname"]);
 		       $song_list_code.= $str;
 		      }
 		        $song_list_code.= "</ul>";
@@ -92,7 +88,7 @@
 
 				$add_to_list=sprintf("
 					<button type='button' song_id='%s' user_name='%s' class=' btn btn-default' data-toggle='modal' data-target='#%sa'>+</button>
-					",$row["song_id"],$_SESSION['user'],$song_name,$song_name);
+					",$rrow["song_id"],$_SESSION['user'],$song_name,$song_name);
 				$adder=sprintf('<div class="modal fade" id="%sa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				  <div class="modal-dialog">
 				    <div class="modal-content">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2015-06-30 12:51:57
+-- Generation Time: 2015-07-01 17:49:38
 -- 服务器版本： 5.6.24
 -- PHP Version: 5.6.8
 
@@ -79,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `record` (
   `user_name` varchar(30) NOT NULL,
   `song_id` int(11) NOT NULL,
   `time` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `record`
@@ -115,7 +115,22 @@ INSERT INTO `record` (`id`, `user_name`, `song_id`, `time`) VALUES
 (30, 'ahriy', 3, '2015-06-30 16:32:38'),
 (31, 'ahriy', 2, '2015-06-30 16:35:46'),
 (32, 'ahriy', 2, '2015-06-30 16:36:41'),
-(33, 'ahriy', 2, '2015-06-30 16:38:03');
+(33, 'ahriy', 2, '2015-06-30 16:38:03'),
+(34, 'ahriy', 3, '2015-07-01 18:59:58'),
+(35, 'ahriy', 5, '2015-07-01 19:10:35'),
+(36, 'ahriy', 22, '2015-07-01 19:10:49'),
+(37, 'ahriy', 2, '2015-07-01 19:12:08'),
+(38, 'ahriy', 2, '2015-07-01 19:18:13'),
+(39, 'ahriy', 70, '2015-07-01 19:37:01'),
+(40, 'ahriy', 22, '2015-07-01 19:38:41'),
+(41, 'ahriy', 70, '2015-07-01 19:39:35'),
+(42, 'ahriy', 82, '2015-07-01 19:41:08'),
+(43, 'ahriy', 81, '2015-07-01 19:41:10'),
+(44, 'ahriy', 81, '2015-07-01 19:41:11'),
+(45, 'ahriy', 81, '2015-07-01 19:41:11'),
+(46, 'ahriy', 80, '2015-07-01 19:41:12'),
+(47, 'ahriy', 92, '2015-07-01 22:10:18'),
+(48, 'ahriy', 2, '2015-07-01 22:10:49');
 
 -- --------------------------------------------------------
 
@@ -154,7 +169,7 @@ CREATE TABLE IF NOT EXISTS `song` (
   `year` varchar(45) DEFAULT NULL,
   `singer_id` int(11) DEFAULT NULL,
   `category` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `song`
@@ -163,7 +178,50 @@ CREATE TABLE IF NOT EXISTS `song` (
 INSERT INTO `song` (`id`, `name`, `album`, `year`, `singer_id`, `category`) VALUES
 (1, 'OnlyLove', NULL, NULL, NULL, 2),
 (2, 'Yellow', NULL, NULL, 6, 1),
-(3, '22', NULL, NULL, 5, 1);
+(3, '22', NULL, NULL, 5, 1),
+(5, 'Enchanted', NULL, NULL, 5, 1),
+(6, 'HowYouGetTheGirl', NULL, NULL, 5, 1),
+(7, 'IKnewYouWereTrouble', NULL, NULL, 5, 1),
+(8, 'IKnowPlaces', NULL, NULL, 5, 1),
+(9, 'IWishYouWould', NULL, NULL, 5, 1),
+(10, 'LastChristmas', NULL, NULL, 5, 1),
+(11, 'LoveStory', NULL, NULL, 5, 1),
+(12, 'Mean', NULL, NULL, 5, 1),
+(13, 'OutOfTheWoods', NULL, NULL, 5, 1),
+(14, 'AllTooWell', NULL, NULL, 5, 1),
+(15, 'AllYouHadToDoWasStay', NULL, NULL, 5, 1),
+(16, 'BackToDecember', NULL, NULL, 5, 1),
+(17, 'BeginAgain', NULL, NULL, 5, 1),
+(18, 'BlankSpace', NULL, NULL, 5, 1),
+(19, 'Clean', NULL, NULL, 5, 1),
+(20, 'Red', NULL, NULL, 5, 1),
+(21, 'Riptide', NULL, NULL, 5, 1),
+(22, 'SafeAndSound', NULL, NULL, 5, 1),
+(23, 'SpeakNow', NULL, NULL, 5, 1),
+(24, 'Style', NULL, NULL, 5, 1),
+(26, 'ThisLove', NULL, NULL, 5, 1),
+(28, 'WelcomeToNewYork', NULL, NULL, 5, 1),
+(29, 'WildestDreams', NULL, NULL, 5, 1),
+(70, 'AlwaysInMyHead', NULL, NULL, 6, 2),
+(71, 'ASkyFullofStars', NULL, NULL, 6, 2),
+(72, 'FixYou', NULL, NULL, 6, 2),
+(73, 'Ink', NULL, NULL, 6, 2),
+(74, 'Magic', NULL, NULL, 6, 2),
+(75, 'Midnight', NULL, NULL, 6, 2),
+(76, 'Miracles', NULL, NULL, 6, 2),
+(77, 'O', NULL, NULL, 6, 2),
+(78, 'Oceans', NULL, NULL, 6, 2),
+(79, 'Paradise', NULL, NULL, 6, 2),
+(80, 'TheScientist', NULL, NULL, 6, 2),
+(92, 'DeadandGone', NULL, NULL, 7, 2),
+(93, 'FiveHundredMiles', NULL, NULL, 7, 3),
+(94, 'Mirrors', NULL, NULL, 7, 2),
+(95, 'NotaBadThing', NULL, NULL, 7, 5),
+(96, 'SexyBack', NULL, NULL, 7, 1),
+(97, 'SuitTie', NULL, NULL, 7, 3),
+(98, 'TakeBacktheNight', NULL, NULL, 7, 3),
+(99, 'TKO', NULL, NULL, 7, 5),
+(100, 'WhereIsTheLove', NULL, NULL, 7, 3);
 
 -- --------------------------------------------------------
 
@@ -195,7 +253,7 @@ CREATE TABLE IF NOT EXISTS `song_list` (
   `user_id` int(11) DEFAULT NULL,
   `note` text,
   `user_name` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `song_list`
@@ -206,7 +264,10 @@ INSERT INTO `song_list` (`id`, `name`, `user_id`, `note`, `user_name`) VALUES
 (17, 'I love music', NULL, '', 'ahriy'),
 (18, '周杰伦', NULL, '这是一个关于周杰伦的歌单', 'ahriy'),
 (19, 'coldplay', NULL, '', 'ahriy'),
-(20, '安安静静听歌', NULL, '', 'ahriy');
+(20, '安安静静听歌', NULL, '', 'ahriy'),
+(21, '我的名字叫devil', NULL, '', 'devil'),
+(22, '只是一个人畜无害的歌单', NULL, '', 'devil'),
+(23, 'devil要学mysql', NULL, '', 'devil');
 
 -- --------------------------------------------------------
 
@@ -227,7 +288,16 @@ INSERT INTO `song_list_has_song` (`song_list_id`, `song_id`) VALUES
 (17, 2),
 (18, 2),
 (19, 2),
-(20, 3);
+(23, 2),
+(12, 3),
+(20, 3),
+(12, 5),
+(12, 6),
+(12, 10),
+(12, 14),
+(12, 23),
+(17, 92),
+(20, 92);
 
 -- --------------------------------------------------------
 
@@ -294,7 +364,7 @@ CREATE TABLE IF NOT EXISTS `user_comment_song` (
 
 INSERT INTO `user_comment_song` (`user_id`, `song_id`, `content`, `picture`, `time`) VALUES
 (46, 1, 'the music is great!', NULL, '2015-06-17 22:00:37'),
-(46, 2, 'so gentle', NULL, '2015-06-17 22:14:34');
+(46, 2, 'so gentle', NULL, '2015-07-01 18:42:59');
 
 -- --------------------------------------------------------
 
@@ -343,7 +413,8 @@ CREATE TABLE IF NOT EXISTS `user_like_song_list` (
 INSERT INTO `user_like_song_list` (`user_id`, `song_list_id`) VALUES
 (1, 12),
 (1, 17),
-(1, 20);
+(1, 20),
+(1, 21);
 
 --
 -- Indexes for dumped tables
@@ -440,7 +511,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `record`
 --
 ALTER TABLE `record`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `singer`
 --
@@ -450,12 +521,12 @@ ALTER TABLE `singer`
 -- AUTO_INCREMENT for table `song`
 --
 ALTER TABLE `song`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=101;
 --
 -- AUTO_INCREMENT for table `song_list`
 --
 ALTER TABLE `song_list`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `user`
 --
