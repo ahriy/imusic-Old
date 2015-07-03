@@ -128,9 +128,9 @@
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
-					<form class="navbar-form navbar-left" role="search">
+					<form class="navbar-form navbar-left" role="search" method="POST" action="/imusic/view/search_result.php">
 						<div class="form-group">
-							<input type="text" class="form-control" />
+							<input type="text" class="form-control" id="ssearch" name="ssearch"/>
 						</div> <button type="submit" class="btn btn-default">搜索</button>
 					</form>
 					</ul>

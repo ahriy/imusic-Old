@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2015-07-01 17:49:38
+-- Generation Time: 2015-07-03 02:04:54
 -- 服务器版本： 5.6.24
 -- PHP Version: 5.6.8
 
@@ -60,6 +60,7 @@ CREATE TABLE IF NOT EXISTS `follow` (
 
 INSERT INTO `follow` (`user_id`, `follower_id`) VALUES
 (1, 1),
+(46, 1),
 (1, 26),
 (1, 28),
 (1, 30),
@@ -79,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `record` (
   `user_name` varchar(30) NOT NULL,
   `song_id` int(11) NOT NULL,
   `time` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `record`
@@ -130,7 +131,13 @@ INSERT INTO `record` (`id`, `user_name`, `song_id`, `time`) VALUES
 (45, 'ahriy', 81, '2015-07-01 19:41:11'),
 (46, 'ahriy', 80, '2015-07-01 19:41:12'),
 (47, 'ahriy', 92, '2015-07-01 22:10:18'),
-(48, 'ahriy', 2, '2015-07-01 22:10:49');
+(48, 'ahriy', 2, '2015-07-01 22:10:49'),
+(49, 'ahriy', 1, '2015-07-02 19:40:09'),
+(50, 'ahriy', 2, '2015-07-02 23:50:16'),
+(51, 'ahriy', 99, '2015-07-03 02:56:17'),
+(52, 'ahriy', 121, '2015-07-03 05:04:48'),
+(53, 'ahriy', 126, '2015-07-03 05:13:03'),
+(54, 'ahriy', 131, '2015-07-03 07:49:47');
 
 -- --------------------------------------------------------
 
@@ -145,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `singer` (
   `region` varchar(45) DEFAULT NULL,
   `birthday` varchar(45) DEFAULT NULL,
   `note` text
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `singer`
@@ -154,7 +161,12 @@ CREATE TABLE IF NOT EXISTS `singer` (
 INSERT INTO `singer` (`id`, `name`, `gender`, `region`, `birthday`, `note`) VALUES
 (5, 'taylor swift', NULL, NULL, NULL, '								泰勒·斯威夫特（Taylor Swift），美国乡村音乐著名创作女歌手。1989年出生于美国宾州。\r\n								2006年与独立唱片公司Big Machine签约并发行首张个人专辑《Taylor Swift》。第二张专辑\r\n								《Fearless》在2008年11月11日发行，在Billboard排行榜上到达了第一的位置，首支单曲\r\n								《Love Story》在2008年9月正式发行，成为了第二畅销的乡村单曲，在公告牌最热100中最高排到第四。\r\n								该专辑也卖出了乡村音乐最高的销售量约60万张，包括其他种类的音乐，也是美国女歌手公开销售最多的专辑。\r\n								Taylor曾获得美国乡村音乐协会奖年度最佳专辑奖、格莱美年度专辑奖等荣誉。'),
 (6, 'cold play', NULL, NULL, NULL, '								Coldplay是英国摇滚乐坛进入新世纪之后崛起的最受欢迎的摇滚乐队之一，他们秉承了英式摇滚乐队\r\n								一贯的风格，成为了英国新一代乐队中的杰出代表。Coldplay有四个成员，1996年时在UCL（University\r\n								 College London）四人相遇，两年后决定合组此乐团。Coldplay乐队成军之后的每一张专辑都不断进步\r\n								 ，一步一步地扩大他们的影响，目前他们正处于事业的快速上升期。'),
-(7, 'Justin Timberlake', 'male', NULL, NULL, '								 贾斯汀·汀布莱克，美国超级巨星，六座格莱美奖、四座艾美奖得主，被认为是对当今流行文化最有影\r\n								 响力的艺人之一。贾斯汀12岁出道，成名于流行组合超级男孩（专辑总销量5000万张）。单飞后全面发\r\n								 展，集歌手、制作人、演员等多重身份于一身，两张个人专辑总销量超过1700万张，受到全球范围内好评\r\n								 。近年来贾斯汀专注于电影事业，在好莱坞发展渐有起色，近期五部电影票房全部突破1.5亿美元并接连与\r\n								 大导演大卫·芬奇、科恩兄弟、克林特·伊斯特伍德等合作。由于Justin拥有或投资服装、高尔夫球场、唱\r\n								 片公司等多项产业，江湖人送外号——贾老板。');
+(7, 'Justin Timberlake', 'male', NULL, NULL, '								 贾斯汀·汀布莱克，美国超级巨星，六座格莱美奖、四座艾美奖得主，被认为是对当今流行文化最有影\r\n								 响力的艺人之一。贾斯汀12岁出道，成名于流行组合超级男孩（专辑总销量5000万张）。单飞后全面发\r\n								 展，集歌手、制作人、演员等多重身份于一身，两张个人专辑总销量超过1700万张，受到全球范围内好评\r\n								 。近年来贾斯汀专注于电影事业，在好莱坞发展渐有起色，近期五部电影票房全部突破1.5亿美元并接连与\r\n								 大导演大卫·芬奇、科恩兄弟、克林特·伊斯特伍德等合作。由于Justin拥有或投资服装、高尔夫球场、唱\r\n								 片公司等多项产业，江湖人送外号——贾老板。'),
+(8, '周杰伦', NULL, NULL, NULL, '周杰伦（Jay Chou），1979年1月18日出生于台湾新北市，华语流行男歌手、词曲创作人、制作人、演员、MV及电影导演、编剧及监制[1]  。\r\n2000年发行首张专辑《Jay》。2002年在中国、新加坡、马来西亚、美国等地举办首场个人世界巡回演唱会。2003年成为美国《时代周刊》亚洲版封面人物[2-3]  。周杰伦的音乐融合中西方元素，风格多变，四次获世界音乐大奖中国最畅销艺人奖[4-5]  。凭借专辑《Jay》《范特西》《叶惠美》及《跨时代》四次获金曲奖最佳国语专辑奖，并凭借《魔杰座》《跨时代》两度获金曲奖“最佳国语男歌手”奖。2014年、2015年两度获QQ音乐年度盛典最佳全能艺人奖[6-7]  。2015年获全球华语榜中榜亚洲影响力最受欢迎全能艺人奖[8]  。\r\n2005年以电影《头文字D》获台湾电影金马奖及香港电影金像奖“最佳新演员”奖。2007年成立杰威尔音乐有限公司[9]  ，自编自导自演的电影《不能说的秘密》获台湾电影金马奖台湾年度杰出电影奖[10]  。2009年入选美国CNN亚洲极具影响力人物[11]  ，2011年主演好莱坞电影《青蜂侠》进军国际[12]  ，获美国MTV电影大奖最佳新人奖提名[13]  。2012年登福布斯中国名人榜榜首[14]  。2013年自编自导自演电影《天台爱情》获选美国纽约电影节闭幕片[15]  。2014年加盟好莱坞电影《惊天魔盗团2》[16]  。2015年监制电影《一万公里的约定》[1]  。'),
+(9, 'mariah carey', NULL, NULL, NULL, '1990年6月13日，发行首张同名专辑《Mariah Carey》，专辑中诞生了以《Vision Of Love》为首的四张冠军单曲[2]  。1995年，发行专辑《Daydream》，根据Nielsen SoundScan统计，在美国售出760万[3]  。1996年，获世界音乐大奖美国销量最佳歌手奖。1999年，与惠特妮·休斯顿共同演唱的歌曲《When You Believe》获得了第71届奥斯卡最佳电影主题曲奖[4]  。2005年，获格莱美音乐奖最佳R&B女歌手。2010年，参演电影《珍爱人生》并凭借该片获意大利第14届好莱坞国际电影节年度女配角奖[5]  。2015年5月，发售精选辑《#1 to Infinity》[6]  。截至2015年，Mariah Carey共拥有18首公告牌冠军单曲[3]  ，从1990年首支单曲《Vision Of Love》开始共有79周在公告牌百强单曲榜夺冠[1]  。'),
+(10, 'carly rae jepsen', NULL, NULL, NULL, '卡莉·蕾·吉普森（Carly Rae Jepsen），1985年11月21日出生于加拿大哥伦比亚省，加拿大歌手。\r\n2007年参加“Canadian Idol”选秀节目，并获得了季军[1]  。2008年9月，发行了首张专辑《Tug Of War》。2011年9月，发行单曲《Call Me Maybe》，在美国公告牌Hot 100单曲榜中九周夺冠，获得了第55届格莱美的年度最佳新人奖提名[2]  。2012年，被贾斯汀·比伯签下。2013年，凭借《Call Me Maybe》获得MTV日本音乐录影带奖最佳新晋艺人音乐录影带奖和第11届华鼎奖全球最受欢迎女歌手奖[3-4]  。2015年3月推出歌曲《I Really Like You》[5]  。'),
+(11, '迈克尔·杰克逊', NULL, NULL, NULL, '迈克尔·杰克逊（Michael Jackson），1958年08月29日在美国印第安纳州加里市出生，美国歌手、词曲创作人、舞蹈家、表演家、慈善家、音乐家、人道主义者、和平主义者、慈善机构创办人。\r\n杰克逊是家族的第七个孩子，他在1964年作为杰克逊五人组的成员和他的兄弟一起在职业音乐舞台上初次登台，1968年乐队与当地的一家唱片公司合作出版了第一张唱片《Big Boy》。1971年12月，发行了个人首支单曲《Got to be there》，标志着其个人独唱生涯的开始。\r\n1982年12月，杰克逊音乐生涯最畅销的专辑《Thriller》发行。1987年9月，杰克逊展开个人首次全球巡演。通过舞台和视频的表演，杰克逊普及了一些像机械舞和太空步等舞蹈技术。杰克逊一生中两次入选的摇滚名人堂，获得了13个格莱美奖和26个全美音乐奖。在他单飞生涯中，他拥有13支美国冠军单曲。2000年吉尼斯世界纪录大全里认证他资助过39个慈善机构。\r\n2009年5月，杰克逊宣布将在伦敦举行系列音乐会；6月25日，他因为急性丙泊酚和苯二氮平类药物中毒导致心脏骤停逝世。洛杉矶法医裁定这是一宗凶杀案，他的私人医生康拉德·莫里被判定过失杀人罪。2010年，迈克尔·杰克逊被授予格莱美终生成就奖。\r\n2009年6月25日，杰克逊辞世，享年50岁。2011年11月7日下午，杰克逊的私人医师莫里 “过失杀人罪”罪名成立，服刑四年监禁。'),
+(12, 'fall out boy', NULL, NULL, NULL, 'Fall out boy（中译名：闹翻天男孩），是来自芝加哥的一个摇滚乐队，组建于2001年，曾入围格莱美。充满年轻活力朝气，畅快将庞克的不羁气焰完全释放，些许EMO风格夹带流畅声线， Fall Out Boy虽然和时下偶像团体般，在团名中加入个"Boy"字眼，但是，他们可完全不按牌理出牌，踢爆时下做作男孩偶像团体的面具，给你最热血的新世代之音！');
 
 -- --------------------------------------------------------
 
@@ -169,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `song` (
   `year` varchar(45) DEFAULT NULL,
   `singer_id` int(11) DEFAULT NULL,
   `category` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `song`
@@ -221,7 +233,24 @@ INSERT INTO `song` (`id`, `name`, `album`, `year`, `singer_id`, `category`) VALU
 (97, 'SuitTie', NULL, NULL, 7, 3),
 (98, 'TakeBacktheNight', NULL, NULL, 7, 3),
 (99, 'TKO', NULL, NULL, 7, 5),
-(100, 'WhereIsTheLove', NULL, NULL, 7, 3);
+(100, 'WhereIsTheLove', NULL, NULL, 7, 3),
+(121, '安静', NULL, NULL, 8, 5),
+(122, '不能说的秘密', NULL, NULL, 8, 6),
+(123, '彩虹', NULL, NULL, 8, 6),
+(124, '简单爱', NULL, NULL, 8, 5),
+(125, '龙卷风', NULL, NULL, 8, 3),
+(126, '七里香', NULL, NULL, 8, 5),
+(127, '晴天', NULL, NULL, 8, 4),
+(128, '手写的从前', NULL, NULL, 8, 4),
+(129, '算什么男人', NULL, NULL, 8, 6),
+(130, '夜曲', NULL, NULL, 8, 4),
+(131, 'ByeBye', NULL, NULL, 9, 5),
+(132, 'IStayInLove', NULL, NULL, 9, 5),
+(133, 'WhenYouBelieve', NULL, NULL, 9, 5),
+(134, 'WithoutYou', NULL, NULL, 9, 2),
+(135, 'CallMeMaybe', NULL, NULL, 10, 5),
+(136, 'Curiosity', NULL, NULL, 10, 5),
+(137, 'IReallyLikeYou', NULL, NULL, 10, 3);
 
 -- --------------------------------------------------------
 
@@ -285,19 +314,23 @@ CREATE TABLE IF NOT EXISTS `song_list_has_song` (
 --
 
 INSERT INTO `song_list_has_song` (`song_list_id`, `song_id`) VALUES
+(12, 2),
 (17, 2),
-(18, 2),
 (19, 2),
 (23, 2),
 (12, 3),
 (20, 3),
 (12, 5),
 (12, 6),
+(18, 7),
 (12, 10),
 (12, 14),
 (12, 23),
 (17, 92),
-(20, 92);
+(20, 92),
+(22, 94),
+(22, 95),
+(22, 97);
 
 -- --------------------------------------------------------
 
@@ -314,7 +347,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `photo` varchar(45) DEFAULT NULL,
   `gender` varchar(45) DEFAULT NULL,
   `what_up` text
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `user`
@@ -363,6 +396,9 @@ CREATE TABLE IF NOT EXISTS `user_comment_song` (
 --
 
 INSERT INTO `user_comment_song` (`user_id`, `song_id`, `content`, `picture`, `time`) VALUES
+(1, 2, '真好听', NULL, '2015-07-03 04:25:38'),
+(1, 5, '被迷住了！', NULL, '2015-07-03 08:00:57'),
+(1, 7, '真好听！', NULL, '2015-07-03 08:01:37'),
 (46, 1, 'the music is great!', NULL, '2015-06-17 22:00:37'),
 (46, 2, 'so gentle', NULL, '2015-07-01 18:42:59');
 
@@ -511,17 +547,17 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `record`
 --
 ALTER TABLE `record`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
 --
 -- AUTO_INCREMENT for table `singer`
 --
 ALTER TABLE `singer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `song`
 --
 ALTER TABLE `song`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=138;
 --
 -- AUTO_INCREMENT for table `song_list`
 --
@@ -531,7 +567,7 @@ ALTER TABLE `song_list`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
 --
 -- 限制导出的表
 --
