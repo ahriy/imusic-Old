@@ -9,6 +9,6 @@ mysql_query("use mydb");
 $str=sprintf("delete from song_list_has_song
 	  		  where song_id='%s' and song_list_id='%s'",$song_id,$song_list);		
 $res=mysql_query($str);
-header("Location: localhost/imusic/view/personal/dynamic/delete_from_list.php");
+header("Location: localhost/imusic/main/personal/dynamic/delete_from_list.php");
 exit;
  ?>

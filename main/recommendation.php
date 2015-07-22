@@ -34,7 +34,7 @@
 								%s
 							</p>
 							<p>
-								 <a class="btn btn-primary" href="/imusic/view/music/singers/s_index.php?singer_id=%s">传送门</a>
+								 <a class="btn btn-primary" href="/imusic/main/music/singers/s_index.php?singer_id=%s">传送门</a>
 							</p>
 						</div>
 					</div>

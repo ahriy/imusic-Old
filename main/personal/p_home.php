@@ -13,7 +13,7 @@
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingOne">
       <h4 class="panel-title">
-        <a id="create_list" href="/imusic/view/personal/create_list/l_index.php">
+        <a id="create_list" href="/imusic/main/personal/create_list/l_index.php">
           创建歌单
         </a>
       </h4>

@@ -3,7 +3,7 @@
 
 	   $(".add_to_list").click(function(){
 	   	alert("成功加入歌单");
-	    $("#add_song").load("/imusic/view/personal/dynamic/add_to_list.php?song_list="+$(this).attr("id")+"&song_id="+$(this).attr("song_id"));
+	    $("#add_song").load("/imusic/main/personal/dynamic/add_to_list.php?song_list="+$(this).attr("id")+"&song_id="+$(this).attr("song_id"));
 	  });
 
 	});

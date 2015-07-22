@@ -2,12 +2,12 @@
    <script>
   $(document).ready(function(){
      $(".delete_from_list").click(function(){
-      $("#delete_song").load("/imusic/view/personal/dynamic/delete_from_list.php?song_list="+$(this).attr("id")+"&song_id="+$(this).attr("song_id"));
+      $("#delete_song").load("/imusic/main/personal/dynamic/delete_from_list.php?song_list="+$(this).attr("id")+"&song_id="+$(this).attr("song_id"));
       window.location.reload();
     });
       $(".add_comment").click(function(){
         alert("评论成功!");
-        $("#add_comment").load("/imusic/view/personal/dynamic/create_comment.php?user_name="+$(this).attr("user_name")+"&song_id="+$(this).attr("song_id")+"&time="+$(this).attr("time")+"&content="+document.getElementById('comment_text'+$(this).attr("song_id")).value);
+        $("#add_comment").load("/imusic/main/personal/dynamic/create_comment.php?user_name="+$(this).attr("user_name")+"&song_id="+$(this).attr("song_id")+"&time="+$(this).attr("time")+"&content="+document.getElementById('comment_text'+$(this).attr("song_id")).value);
     });
   });
   </script>

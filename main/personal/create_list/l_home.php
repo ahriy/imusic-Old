@@ -1,4 +1,4 @@
-			<form class="form-horizontal" role="form" method="POST" action="/imusic/view/personal/create_list/create_list_result.php">
+			<form class="form-horizontal" role="form" method="POST" action="/imusic/main/personal/create_list/create_list_result.php">
 				<div class="form-group">
 					 <label for="lname" class="col-sm-3 control-label">歌单名</label>
 					<div class="col-sm-8">

@@ -1,7 +1,7 @@
 <?php 
 
 echo "enter the db";
-$con = mysql_connect("localhost","root","");
+$con = mysql_connect("localhost","root","root");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());

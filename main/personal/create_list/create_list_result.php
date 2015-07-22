@@ -11,7 +11,7 @@
 			$inster_comm=sprintf("insert into song_list (name,note,user_name) values ('%s','%s','%s')",$_POST['lname'],$_POST['lnote'],$_SESSION['user']);
 			mysql_query($inster_comm);
 			echo  "<script>alert('歌单已经创建成功!')</script>";
-			header("Location: /imusic/view/personal/p_index.php");
+			header("Location: /imusic/main/personal/p_index.php");
 			exit;
 		}
 

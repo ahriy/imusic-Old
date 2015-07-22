@@ -14,7 +14,7 @@
 						$str=sprintf("
 							<tr>
 								<td>
-									<a href='/imusic/view/music/singers/s_index.php?singer_id=%s'>%s</a>
+									<a href='/imusic/main/music/singers/s_index.php?singer_id=%s'>%s</a>
 								</td>
 							</tr>",$row["id"],$row["name"]);
 						echo $str;

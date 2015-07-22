@@ -9,28 +9,28 @@
    <script>
 	$(document).ready(function(){
 	  $("#button1").click(function(){
-	    $("#options").load("/imusic/view/personal/dynamic/mysinger.php");
+	    $("#options").load("/imusic/main/personal/dynamic/mysinger.php");
 	  });
 	   $(".slist").click(function(){
 	   	// alert($(this).attr("id"));
-	    $("#options").load("/imusic/view/personal/dynamic/song_list.php?list="+$(this).attr("id"));
+	    $("#options").load("/imusic/main/personal/dynamic/song_list.php?list="+$(this).attr("id"));
 	  });
 	    $(".insert_record").click(function(){
-	    $("#insert_record").load("/imusic/view/personal/dynamic/insert_record.php?song_id="+$(this).attr("song_id")+"&user_name="+$(this).attr("user_name"));
+	    $("#insert_record").load("/imusic/main/personal/dynamic/insert_record.php?song_id="+$(this).attr("song_id")+"&user_name="+$(this).attr("user_name"));
 	  });
 	   	$("#my_record").click(function(){
-	    $("#options").load("/imusic/view/personal/dynamic/my_record.php");
+	    $("#options").load("/imusic/main/personal/dynamic/my_record.php");
 	  });
 	   $(".add_to_list").click(function(){
 	   	alert("成功加入歌单");
-	    $("#add_song").load("/imusic/view/personal/dynamic/add_to_list.php?song_list="+$(this).attr("id")+"&song_id="+$(this).attr("song_id"));
+	    $("#add_song").load("/imusic/main/personal/dynamic/add_to_list.php?song_list="+$(this).attr("id")+"&song_id="+$(this).attr("song_id"));
 	  });
 	   $(".show_list").click(function(){
-	    $("#show_list").load("/imusic/view/ffriends/show_list.php?user_name="+$(this).attr("user_name"));
+	    $("#show_list").load("/imusic/main/ffriends/show_list.php?user_name="+$(this).attr("user_name"));
 	  });
 	   $(".follow_user").click(function(){
 	   	alert("您将关注用户"+$(this).attr("user_name"));
-	    $("#follow_user").load("/imusic/view/ffriends/follow_user.php?user_name="+$(this).attr("user_name")+"&user_id="+$(this).attr("user_id"));
+	    $("#follow_user").load("/imusic/main/ffriends/follow_user.php?user_name="+$(this).attr("user_name")+"&user_id="+$(this).attr("user_id"));
 	  });
 	});
 	</script>
@@ -112,23 +112,23 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li>
-							 <a href="/imusic/view/music/m_index.php">发现音乐</a>
+							 <a href="/imusic/main/music/m_index.php">发现音乐</a>
 						</li>
 
 						<li>
-							 <a href="/imusic/view/ffriends/ff_index.php">发现朋友</a>
+							 <a href="/imusic/main/ffriends/ff_index.php">发现朋友</a>
 						</li>
 
 						<li>
-							 <a href="/imusic/view/personal/p_index.php">我的音乐</a>
+							 <a href="/imusic/main/personal/p_index.php">我的音乐</a>
 						</li>
 						<li>
-							 <a href="/imusic/view/friends/f_index.php">我的朋友</a>
+							 <a href="/imusic/main/friends/f_index.php">我的朋友</a>
 						</li>
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
-					<form class="navbar-form navbar-left" role="search" method="POST" action="/imusic/view/search_result.php">
+					<form class="navbar-form navbar-left" role="search" method="POST" action="/imusic/main/search_result.php">
 						<div class="form-group">
 							<input type="text" class="form-control" id="ssearch" name="ssearch"/>
 						</div> <button type="submit" class="btn btn-default">搜索</button>

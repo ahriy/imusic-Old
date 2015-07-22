@@ -23,7 +23,7 @@
 		<div class="col-md-4 column">
 		</div>
 		<div class="col-md-4 column">
-			<form class="form-horizontal" role="form" method="POST" action="/imusic/view/register_result.php">
+			<form class="form-horizontal" role="form" method="POST" action="/imusic/main/register_result.php">
 				<div class="form-group">
 					 <label for="rname" class="col-sm-3 control-label">用户名*</label>
 					<div class="col-sm-8">

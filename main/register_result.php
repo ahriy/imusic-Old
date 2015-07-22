@@ -34,7 +34,7 @@
 		exit;
 	}
 	else{
-		header("Location: /imusic/view/register.php");
+		header("Location: /imusic/main/register.php");
 		exit;
 	} 
  ?>

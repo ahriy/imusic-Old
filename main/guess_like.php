@@ -30,7 +30,7 @@
 							echo "<h4>";
 							echo $song_name;
 							echo "</br>";
-							$singer_code=sprintf("<small> <a href='/imusic/view/music/singers/s_index.php?singer_id=%s'>%s</a><small>",$singer_id,$singer_name); 
+							$singer_code=sprintf("<small> <a href='/imusic/main/music/singers/s_index.php?singer_id=%s'>%s</a><small>",$singer_id,$singer_name); 
 							echo $singer_code;
 							echo "</h4>";
 							echo "</td>";
@@ -104,7 +104,7 @@
 							echo "<h4>";
 							echo $song_name;
 							echo "</br>";
-							$singer_code=sprintf("<small> <a href='/imusic/view/music/singers/s_index.php?singer_id=%s'>%s</a><small>",$singer_id,$singer_name); 
+							$singer_code=sprintf("<small> <a href='/imusic/main/music/singers/s_index.php?singer_id=%s'>%s</a><small>",$singer_id,$singer_name); 
 							echo $singer_code;
 							echo "</h4>";
 							echo "</td>";

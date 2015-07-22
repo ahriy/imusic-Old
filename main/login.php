@@ -27,7 +27,7 @@
 			  		<div class="row clearfix">
 						<div class="col-md-4 column">
 						    <div class="col-sm-offset-2 col-sm-10">
-						    	<a href="/imusic/view/register.php">注册</a>
+						    	<a href="/imusic/main/register.php">注册</a>
 			    			</div>
 						</div>
 						<div class="col-md-4 column">

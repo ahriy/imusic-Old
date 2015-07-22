@@ -2,11 +2,11 @@
    <script>
   $(document).ready(function(){
 	   $(".slist").click(function(){
-	    $("#sl").load("/imusic/view/ffriends/show_list_song.php?list="+$(this).attr("id"));
+	    $("#sl").load("/imusic/main/ffriends/show_list_song.php?list="+$(this).attr("id"));
 	  });
 	   $(".add_list").click(function(){
 	   	alert("成功加入收藏！");
-	    $("#al").load("/imusic/view/ffriends/add_list.php?list_id="+$(this).attr("list_id"));
+	    $("#al").load("/imusic/main/ffriends/add_list.php?list_id="+$(this).attr("list_id"));
 	  });
   });
   </script>
